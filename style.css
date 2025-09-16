@@ -1196,9 +1196,7 @@ background-image:url(/asset/cloud.webp);
 background-repeat: no-repeat;
 background-size: 100%;
 width: 100%;
-/* height: 400px; */
 margin: 50px auto;
-/* border: 1px solid red; */
 }
 
 .your-people h1 {
@@ -1273,6 +1271,7 @@ color:rgba(0, 128, 0, 0.548);
 
 .sec-content .privacy-toggle {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 6px;
     overflow: hidden;
@@ -1280,39 +1279,44 @@ color:rgba(0, 128, 0, 0.548);
 }
 
 .footer-minibadge {
-width: 25px;
+    width: 25px;
 }
 
 .footer-img-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    width: max-content;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    justify-content: flex-start;
+    justify-items: flex-start;
+}
+
+.footer-img-wrapper .footer-badge {
+    max-width: 50px;
+    border-radius: 6px;
+}
+
+footer {
+    padding: 0 15px;
 }
 
 .footer {
-width: 100%;
-height: 80px;
-border: 1px solid rgba(0, 0, 0, 0.13);
-display: flex;
-
-justify-content: space-between;
-margin-top: 60px;
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.13);
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    padding: 15px 0 30px;
 }
 
 .copyright {
-font-size: 11px;
-font-weight: 600;
-/* background-color: red; */
-color: rgba(0, 0, 0, 0.801);
-margin-left: 40px;
-margin-top: 15px;
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.801);
 }
 
 .footer-socials {
-display: flex;
-gap: 12px;
-margin-top: 15px;
+    display: flex;
+    gap: 12px;
 }
 
 section .built-wrapper {
@@ -1496,48 +1500,49 @@ border: none;
 }
 
 .integrations-grid-logo {
-width: 100px;
-height: 80px;
-/* background-color: red; */
-padding-right:17px;
-/* margin-bottom: 30px; */
+    /* width: 100px;
+    height: 80px; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* padding-right:17px; */
 }
 
 .excelent-container {
-width: 90%;
-height: 500px;
-/* background-color: red; */
-margin: 10px auto;
+    width: 90%;
+    margin: 10px auto;
 }
 
 .excelent-container h1 {
-width: 80%;
-margin: 80px auto;
-/* background-color: blue; */
-text-align: center;
+    width: 80%;
+    margin: 80px auto;
+    text-align: center;
 font-size: 40px;
 }
 
 .excel-flex {
-display: flex;
-width: 100%;
-height: 350px;
-margin:20px auto;
-
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin: 15px auto;
 }
 
 .right-excel {
-width:40%;
-max-height: 320px;
+    width:25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
 }
+
 .right-excel .libary {
-border: 1px solid rgba(0, 0, 0, 0.082);
-background-color: #FFFFFF;
-max-width: 90%;
-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.048);
-height: 130px;
-margin:10px auto;
-border-radius: 20px;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.082);
+    background-color: #FFFFFF;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.048);
+    min-height: 140px;
+    margin: 0 auto;
+    border-radius: 20px;
 }
 
 .libary h2 {
@@ -1553,21 +1558,20 @@ color: rgba(0, 0, 0, 0.541);
 }
 
 .middle-excel {
-/* background-color: blue; */
-width:60%;
+    width:50%;
+    min-height: 140px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.082);
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.048);
+    padding:5px;
+    border-radius: 20px;
 }
 
 .middle-item {
-    /* width: 60%; */
-    background-color: blue;
-    height: 270px;
-    margin-top: 10px;
-    border-radius: 20px;
-    border: 5px solid white;
-    overflow: hidden;
-    background-image: url(/asset/thumbai.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
 }
 
 /* form */
@@ -2023,38 +2027,25 @@ width:60%;
         display: none;
     }
 
-    
     .excelent-container h1 {
        width: 100%;
        font-size: 30px;
     }
 
     .excel-flex {
-       display: flex;
-       flex-direction: column;
-       width: 100%;
-       height: 100%;
+        display: flex;
+        flex-direction: column;
     }
 
     .right-excel {
-       width:100%;
-       /* background-color: red; */
-       display: flex;
-       gap: 10px;
-       height: 300px;
-    }
-
-
-    .middle-excel {
-        width: 100%;
-        /* height: 250px; */
+        width:100%;
+        flex-direction: row;
     }
 
     .right-excel .libary {
-       height: max-content;
-       /* background-color: red; */
-       width: 50%;
-       padding: 5px;
+        width: 100%;
+        min-height: 140px;
+        margin: 0 auto;
     }
 
     .libary h2 {
@@ -2067,9 +2058,13 @@ width:60%;
        font-weight: 600;
     }
 
+    .middle-excel {
+        width: 100%;
+        min-height: 250px;
+    }
+
     .your-people {
-        margin-top: 250px;
-        /* background-color: red; */
+        margin-top: 10px;
     }
 
 
@@ -2188,21 +2183,35 @@ width:60%;
     .sec-content .privacy-toggle {
         flex-direction: column;
         align-items: flex-start;
-        /* background-color: red; */
     }
-  
+
+    .footer-img-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 15px;
+        justify-content: space-between;
+        margin-top: 60px;
+        padding: 15px 0 30px;
+    }
+    
 }
 
 @media screen and (max-width: 480px) {
     .last-wrap .inner-img {
-    width: 45px;
-    height: 45px;
- }
+        width: 45px;
+        height: 45px;
+    }
 
- .right-con {
-    margin-left: 15px;
- }
-  
+    .right-con {
+        margin-left: 15px;
+    }
+    
+    .footer-img-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 
